@@ -28,7 +28,7 @@ const HeroSection = () => {
         >
             <LaserFlow
                 horizontalBeamOffset={0.1}
-                verticalBeamOffset={0.02}
+                verticalBeamOffset={0.03}
                 color="#EC4899"
             />
 
