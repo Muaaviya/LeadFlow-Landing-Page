@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import LaserFlow from "@/components/LaserFlow";
 import dashboardPreview from "@/assets/dashboard-preview.png";
-
+import { Button } from "../ui/button";
 const HeroSection = () => {
     const revealImgRef = useRef<HTMLImageElement>(null);
 
@@ -31,6 +31,18 @@ const HeroSection = () => {
                 verticalBeamOffset={0.03}
                 color="#EC4899"
             />
+            {/* Hero Content */}
+            <div className="absolute top-40 left-8 md:left-16 lg:left-70 z-10 max-w-md">
+                <h1 className="text-5xl md:text-6xl font-bold text-primary mb-4">
+                    LeadFlow
+                </h1>
+                <p className="text-lg md:text-xl text-foreground/90 mb-6">
+                    Generating leads has never been easier!
+                </p>
+                <Button variant="primary" size="lg">
+                    Get Started
+                </Button>
+            </div>
 
             {/* Dashboard box */}
             <div
