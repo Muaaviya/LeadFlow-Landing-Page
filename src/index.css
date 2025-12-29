@@ -5,7 +5,7 @@
 
 :root {
   --radius: 0.75rem;
-  --background: hsl(210 50% 1%);
+  --background: hsl(0, 0%, 0%);
   --foreground: hsl(0 0% 95%);
   --card: hsl(240 10% 6%);
   --card-foreground: hsl(0 0% 95%);
@@ -137,6 +137,17 @@
       offset-distance: 100%;
     }
   }
+
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
 
   --animate-border-beam: border-beam calc(var(--duration)*1s) infinite linear;
 }
