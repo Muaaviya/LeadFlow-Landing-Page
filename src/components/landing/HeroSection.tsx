@@ -28,18 +28,18 @@ const HeroSection = () => {
         >
             <LaserFlow
                 horizontalBeamOffset={0.1}
-                verticalBeamOffset={0.03}
+                verticalBeamOffset={0.04}
                 color="#EC4899"
             />
             {/* Hero Content */}
             <div className="absolute top-40 left-8 md:left-16 lg:left-70 z-10 max-w-md">
-                <h1 className="text-5xl md:text-6xl font-bold text-primary mb-4">
+                <h1 className="text-5xl md:text-6xl font-bold text-primary mb-4 animate-fade-in opacity-0" style={{ animationDelay: '0.1s', animationFillMode: 'forwards' }}>
                     LeadFlow
                 </h1>
-                <p className="text-lg md:text-xl text-foreground/90 mb-6">
+                <p className="text-lg md:text-xl text-foreground/90 mb-6 animate-fade-in opacity-0" style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}>
                     Generating leads has never been easier!
                 </p>
-                <Button variant="primary" size="lg">
+                <Button variant="primary" size="lg" className="animate-fade-in opacity-0" style={{ animationDelay: '0.5s', animationFillMode: 'forwards' }}>
                     Get Started
                 </Button>
             </div>
