@@ -1,12 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @custom-variant dark (&:is(.dark *));
 
 :root {
   --radius: 0.75rem;
-  --background: hsl(0, 0%, 0%);
+  --background: hsl(210 50% 1%);
   --foreground: hsl(0 0% 95%);
   --card: hsl(240 10% 6%);
   --card-foreground: hsl(0 0% 95%);
@@ -132,6 +131,14 @@
       opacity: 1;
     }
   }
+
+  @keyframes border-beam {
+    100% {
+      offset-distance: 100%;
+    }
+  }
+
+  --animate-border-beam: border-beam calc(var(--duration)*1s) infinite linear;
 }
 
 @layer base {

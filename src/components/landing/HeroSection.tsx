@@ -2,6 +2,7 @@ import { useRef } from "react";
 import LaserFlow from "@/components/LaserFlow";
 import dashboardPreview from "@/assets/dashboard-preview.png";
 import { Button } from "../ui/button";
+import { BorderBeam } from "../ui/border-beam";
 const HeroSection = () => {
     const revealImgRef = useRef<HTMLImageElement>(null);
 
@@ -53,6 +54,13 @@ const HeroSection = () => {
                     src={dashboardPreview}
                     alt="LeadFlow Dashboard"
                     className="w-full h-full object-cover object-top opacity-90"
+                />
+                <BorderBeam
+                    size={300}
+                    duration={12}
+                    colorFrom="var(--primary)"
+                    colorTo="var(--primary)"
+                    borderWidth={2}
                 />
             </div>
 
