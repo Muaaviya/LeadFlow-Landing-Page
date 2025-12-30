@@ -7,7 +7,7 @@ const CTASection = () => {
             <div className="container mx-auto px-6">
                 <div className="relative rounded-2xl overflow-hidden glass p-12 md:p-16 text-center">
                     {/* Subtle gradient overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10 pointer-events-none" />
+                    <div className="absolute inset-0 bg-linear-to-br from-primary/5 via-transparent to-primary/10 pointer-events-none" />
 
                     <div className="relative z-10">
                         <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
