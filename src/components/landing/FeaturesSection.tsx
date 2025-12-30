@@ -1,4 +1,5 @@
 import { Target, Zap, Users, BarChart3 } from "lucide-react";
+import { CardSpotlight } from "@/components/ui/card-spotlight";
 
 const features = [
     {
@@ -38,21 +39,23 @@ const FeaturesSection = () => {
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {features.map((feature, index) => (
-                        <div
+                        <CardSpotlight
                             key={feature.title}
-                            className="group p-6 rounded-xl bg-card border border-border hover:border-primary/30 transition-all duration-300 animate-fade-in"
+                            className="p-6 rounded-xl bg-card border-border hover:border-primary/30 transition-all duration-300 animate-fade-in"
                             style={{ animationDelay: `${index * 0.1}s` }}
                         >
-                            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                                <feature.icon className="w-6 h-6 text-primary" />
+                            <div className="relative z-20">
+                                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover/spotlight:bg-primary/20 transition-colors">
+                                    <feature.icon className="w-6 h-6 text-primary" />
+                                </div>
+                                <h3 className="text-lg font-semibold text-foreground mb-2">
+                                    {feature.title}
+                                </h3>
+                                <p className="text-sm text-muted-foreground leading-relaxed">
+                                    {feature.description}
+                                </p>
                             </div>
-                            <h3 className="text-lg font-semibold text-foreground mb-2">
-                                {feature.title}
-                            </h3>
-                            <p className="text-sm text-muted-foreground leading-relaxed">
-                                {feature.description}
-                            </p>
-                        </div>
+                        </CardSpotlight>
                     ))}
                 </div>
             </div>
