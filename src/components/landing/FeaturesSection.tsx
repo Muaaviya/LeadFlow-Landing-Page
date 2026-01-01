@@ -45,8 +45,8 @@ const FeaturesSection = () => {
                             style={{ animationDelay: `${index * 0.1}s` }}
                         >
                             <div className="relative z-20">
-                                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover/spotlight:bg-primary/20 transition-colors">
-                                    <feature.icon className="w-6 h-6 text-primary" />
+                                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover/spotlight:bg-primary/20 group-hover/spotlight:shadow-[0_0_20px_rgba(236,72,153,0.4)] transition-all duration-300">
+                                    <feature.icon className="w-6 h-6 text-primary group-hover/spotlight:drop-shadow-[0_0_8px_rgba(236,72,153,0.6)] transition-all duration-300" />
                                 </div>
                                 <h3 className="text-lg font-semibold text-foreground mb-2">
                                     {feature.title}
