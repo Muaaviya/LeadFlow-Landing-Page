@@ -1,5 +1,6 @@
 import { Target, Zap, Users, BarChart3 } from "lucide-react";
 import { CardSpotlight } from "@/components/ui/card-spotlight";
+import { motion } from 'framer-motion'
 
 const features = [
     {
@@ -39,23 +40,31 @@ const FeaturesSection = () => {
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {features.map((feature, index) => (
-                        <CardSpotlight
+                        <motion.div
                             key={feature.title}
-                            className="p-6 rounded-xl bg-card border-border hover:border-primary/30 transition-all duration-300 animate-fade-in"
-                            style={{ animationDelay: `${index * 0.1}s` }}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, margin: "-50px" }}
+                            transition={{
+                                duration: 0.5,
+                                delay: index * 0.1,
+                                ease: [0.25, 0.46, 0.45, 0.94]
+                            }}
                         >
-                            <div className="relative z-20">
-                                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover/spotlight:bg-primary/20 group-hover/spotlight:shadow-[0_0_20px_rgba(236,72,153,0.4)] transition-all duration-300">
-                                    <feature.icon className="w-6 h-6 text-primary group-hover/spotlight:drop-shadow-[0_0_8px_rgba(236,72,153,0.6)] transition-all duration-300" />
+                            <CardSpotlight className="p-6 rounded-xl bg-card border-border h-full">
+                                <div className="relative z-20">
+                                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover/spotlight:bg-primary/20 group-hover/spotlight:shadow-[0_0_20px_rgba(236,72,153,0.4)] transition-all duration-300">
+                                        <feature.icon className="w-6 h-6 text-primary group-hover/spotlight:drop-shadow-[0_0_8px_rgba(236,72,153,0.6)] transition-all duration-300" />
+                                    </div>
+                                    <h3 className="text-lg font-semibold text-foreground mb-2">
+                                        {feature.title}
+                                    </h3>
+                                    <p className="text-sm text-muted-foreground leading-relaxed">
+                                        {feature.description}
+                                    </p>
                                 </div>
-                                <h3 className="text-lg font-semibold text-foreground mb-2">
-                                    {feature.title}
-                                </h3>
-                                <p className="text-sm text-muted-foreground leading-relaxed">
-                                    {feature.description}
-                                </p>
-                            </div>
-                        </CardSpotlight>
+                            </CardSpotlight>
+                        </motion.div>
                     ))}
                 </div>
             </div>
