@@ -99,7 +99,7 @@ const HoverButton = React.forwardRef<HTMLButtonElement, HoverButtonProps>(
                         key={id}
                         className={cn(
                             "pointer-events-none absolute rounded-full",
-                            "w-[300px] h-[300px] -translate-x-1/2 -translate-y-1/2",
+                            "w-75 h-75 -translate-x-1/2 -translate-y-1/2",
                             "transition-opacity duration-1000",
                             fadeState === "in" && "opacity-100",
                             fadeState === "out" && "opacity-0",

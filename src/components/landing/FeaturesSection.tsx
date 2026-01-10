@@ -1,6 +1,6 @@
 import { Target, Zap, Users, BarChart3 } from "lucide-react";
 import { CardSpotlight } from "@/components/ui/card-spotlight";
-import { motion } from 'framer-motion'
+import { motion } from "framer-motion";
 
 const features = [
     {
@@ -27,18 +27,18 @@ const features = [
 
 const FeaturesSection = () => {
     return (
-        <section id="features" className="py-24 relative">
-            <div className="container mx-auto px-6">
-                <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+        <section id="features" className="py-16 sm:py-20 md:py-24 relative">
+            <div className="container mx-auto px-4 sm:px-6">
+                <div className="text-center mb-10 sm:mb-12 md:mb-16">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4">
                         Everything you need to grow
                     </h2>
-                    <p className="text-muted-foreground max-w-lg mx-auto">
+                    <p className="text-sm sm:text-base text-muted-foreground max-w-md sm:max-w-lg mx-auto px-4 sm:px-0">
                         LeadFlow combines intelligent prospecting with actionable data to accelerate your client acquisition.
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6">
                     {features.map((feature, index) => (
                         <motion.div
                             key={feature.title}
