@@ -1,5 +1,19 @@
 import { Button } from "@/components/ui/button";
-import { Zap } from "lucide-react";
+import { Zap, Menu } from "lucide-react";
+import {
+    Sheet,
+    SheetContent,
+    SheetHeader,
+    SheetTitle,
+    SheetTrigger,
+} from "@/components/ui/sheet";
+
+const navLinks = [
+    { href: "#features", label: "Features" },
+    { href: "#how-it-works", label: "How it works" },
+    { href: "#pricing", label: "Pricing" },
+];
+
 
 const Header = () => {
     return (
@@ -13,27 +27,68 @@ const Header = () => {
                 </div>
 
                 <nav className="hidden md:flex items-center gap-6 lg:gap-8">
-                    <a href="#features" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                        Features
-                    </a>
-                    <a href="#how-it-works" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                        How it works
-                    </a>
-                    <a href="#pricing" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                        Pricing
-                    </a>
+                    {navLinks.map((link) => (
+                        <a
+                            key={link.href}
+                            href={link.href}
+                            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                        >
+                            {link.label}
+                        </a>
+                    ))}
                 </nav>
 
                 <div className="flex items-center gap-2 sm:gap-3">
-                    <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground text-xs sm:text-sm px-2 sm:px-3">
+                    <Button variant="ghost" size="sm" className="hidden sm:inline-flex text-muted-foreground hover:text-foreground text-xs sm:text-sm px-2 sm:px-3">
                         Sign in
                     </Button>
                     <Button variant="primary" size="sm" className="text-xs sm:text-sm px-3 sm:px-4">
                         Get Started
                     </Button>
+
+                    {/* Mobile burger menu */}
+                    <Sheet>
+                        <SheetTrigger asChild>
+                            <Button variant="ghost" size="sm" className="md:hidden p-2">
+                                <Menu className="w-5 h-5" />
+                                <span className="sr-only">Open menu</span>
+                            </Button>
+                        </SheetTrigger>
+                        <SheetContent side="right" className="w-70 bg-background/95 backdrop-blur-lg">
+                            <SheetHeader>
+                                <SheetTitle className="flex items-center gap-2">
+                                    <div className="w-7 h-7 rounded-lg bg-primary/20 flex items-center justify-center">
+                                        <Zap className="w-4 h-4 text-primary" />
+                                    </div>
+                                    <span>LeadFlow</span>
+                                </SheetTitle>
+                            </SheetHeader>
+                            <nav className="flex flex-col gap-4 mt-8">
+                                {navLinks.map((link) => (
+                                    <a
+                                        key={link.href}
+                                        href={link.href}
+                                        className="text-base text-muted-foreground hover:text-foreground transition-colors py-2"
+                                    >
+                                        {link.label}
+                                    </a>
+                                ))}
+                                <hr className="border-border my-2" />
+                                <a
+                                    href="#"
+                                    className="text-base text-muted-foreground hover:text-foreground transition-colors py-2"
+                                >
+                                    Sign in
+                                </a>
+                                <Button variant="primary" className="mt-2 w-full">
+                                    Get Started
+                                </Button>
+                            </nav>
+                        </SheetContent>
+                    </Sheet>
                 </div>
             </div>
-        </header>
+        </header >
     );
 };
 
