@@ -6,14 +6,17 @@ import { BorderBeam } from "../ui/border-beam";
 const HeroSection = () => {
     const revealImgRef = useRef<HTMLImageElement>(null);
     const [isTablet, setIsTablet] = useState(false);
+    const [isMobile, setIsMobile] = useState(false)
 
     useEffect(() => {
-        const checkTablet = () => {
-            setIsTablet(window.innerWidth >= 640 && window.innerWidth < 1024);
+        const checkScreenSize = () => {
+            const width = window.innerWidth
+            setIsTablet(width >= 640 && width < 1024);
+            setIsMobile(width < 640)
         };
-        checkTablet();
-        window.addEventListener('resize', checkTablet);
-        return () => window.removeEventListener('resize', checkTablet);
+        checkScreenSize();
+        window.addEventListener('resize', checkScreenSize);
+        return () => window.removeEventListener('resize', checkScreenSize);
     }, []);
 
     return (
@@ -39,25 +42,26 @@ const HeroSection = () => {
         >
             <LaserFlow
                 horizontalBeamOffset={0.1}
-                verticalBeamOffset={isTablet ? -0.50 : 0.04}
+                verticalBeamOffset={isMobile ? -0.50 : isTablet ? -0.50 : 0.04}
                 color="#EC4899"
             />
             {/* Hero Content */}
-            <div className="absolute top-24 sm:top-32 md:top-40 left-6 sm:left-8 md:left-16 lg:left-70 z-10 max-w-xs sm:max-w-sm md:max-w-md px-2 sm:px-0">
+
+            <div className="absolute bottom-25 xs:top-24 sm:top-32 md:top-40 left-4 xs:left-6 sm:left-8 md:left-16 lg:left-70 z-10 max-w-70 xs:max-w-xs sm:max-w-sm md:max-w-md px-1 xs:px-2 sm:px-0">
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-primary mb-3 sm:mb-4 animate-fade-in opacity-0" style={{ animationDelay: '0.1s', animationFillMode: 'forwards' }}>
                     LeadFlow
                 </h1>
                 <p className="text-base sm:text-lg md:text-xl text-foreground/90 mb-4 sm:mb-6 animate-fade-in opacity-0" style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}>
                     Generating leads has never been easier!
                 </p>
-                <Button variant="primary" size="lg" className="animate-fade-in opacity-0" style={{ animationDelay: '0.5s', animationFillMode: 'forwards' }}>
+                <Button variant="primary" size="default" className="text-sm sm:text-base animate-fade-in opacity-0" style={{ animationDelay: '0.5s', animationFillMode: 'forwards' }}>
                     Get Started
                 </Button>
             </div>
 
             {/* Dashboard box */}
             <div
-                className="absolute bottom-3 left-1/2 -translate-x-1/2 w-[95%] sm:w-[90%] md:w-[80%] lg:w-[70%] h-[45%] sm:h-[50%] md:h-[55%] rounded-t-xl border-2 border-b-0 border-primary/40 overflow-hidden glow-sm"
+                className="absolute bottom-81 xs:bottom-3 left-1/2 -translate-x-1/2 w-[98%] xs:w-[95%] sm:w-[90%] md:w-[80%] lg:w-[70%] h-[38%] xs:h-[42%] sm:h-[50%] md:h-[55%] rounded-t-lg xs:rounded-t-xl border border-primary/30 xs:border-2 xs:border-primary/40 border-b-0 overflow-hidden glow-sm"
                 style={{ backgroundColor: 'hsl(240, 10%, 4%)' }}
             >
                 <img
