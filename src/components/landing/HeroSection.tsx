@@ -3,6 +3,7 @@ import LaserFlow from "@/components/LaserFlow";
 import dashboardPreview from "@/assets/dashboard-preview.png";
 import { Button } from "../ui/button";
 import { BorderBeam } from "../ui/border-beam";
+
 const HeroSection = () => {
     const revealImgRef = useRef<HTMLImageElement>(null);
     const [isTablet, setIsTablet] = useState(false);
@@ -61,7 +62,7 @@ const HeroSection = () => {
 
             {/* Dashboard box */}
             <div
-                className="absolute bottom-81 xs:bottom-3 left-1/2 -translate-x-1/2 w-[98%] xs:w-[95%] sm:w-[90%] md:w-[80%] lg:w-[70%] h-[38%] xs:h-[42%] sm:h-[50%] md:h-[55%] rounded-t-lg xs:rounded-t-xl border border-primary/30 xs:border-2 xs:border-primary/40 border-b-0 overflow-hidden glow-sm"
+                className="absolute bottom-75 sm:bottom-2.5 lg:bottom-0 xs:bottom-3 left-1/2 -translate-x-1/2 w-[98%] xs:w-[95%] sm:w-[90%] md:w-[80%] lg:w-[70%] h-[38%] xs:h-[42%] sm:h-[50%] md:h-[55%] rounded-t-lg xs:rounded-t-xl border border-primary/30 xs:border-2 xs:border-primary/40 border-b-0 overflow-hidden glow-sm"
                 style={{ backgroundColor: 'hsl(240, 10%, 4%)' }}
             >
                 <img
