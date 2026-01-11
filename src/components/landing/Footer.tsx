@@ -19,7 +19,7 @@ const Footer = () => {
                     </div>
 
                     <p className="text-xs sm:text-sm text-muted-foreground">
-                        © 2025 LeadFlow. All rights reserved.
+                        © 2026 LeadFlow. All rights reserved.
                     </p>
                 </div>
             </div>
