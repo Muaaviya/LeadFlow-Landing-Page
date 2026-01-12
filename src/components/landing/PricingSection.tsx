@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Card, CardContent, CardHeader } from "@/components/ui/Card";
 // import { Sparkles } from "@/components/ui/sparkles";
 import { TimelineContent } from "@/components/ui/timeline-animation";
 import { VerticalCutReveal } from "@/components/ui/vertical-cut-reveal";
@@ -78,43 +78,45 @@ const PricingSwitch = ({ onSwitch }: { onSwitch: (value: string) => void }) => {
     };
 
     return (
-        <div className="flex justify-center items-center gap-3">
-            <div className="border border-primary/30 rounded-full flex items-center py-1 px-1 bg-background/50 backdrop-blur-sm">
-                <button
-                    onClick={() => handleSwitch("0")}
-                    className={cn(
-                        "relative z-10 w-fit h-10 rounded-full sm:px-6 px-3 sm:py-2 py-1 font-medium transition-colors",
-                        selected === "0" ? "text-white" : "text-muted-foreground"
-                    )}
-                >
-                    {selected === "0" && (
-                        <motion.div
-                            layoutId="pricing-switch"
-                            className="absolute inset-0 rounded-full bg-primary"
-                            transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                        />
-                    )}
-                    <span className="relative z-10">Monthly</span>
-                </button>
+        <section id="pricing">
+            <div className="flex justify-center items-center gap-3">
+                <div className="border border-primary/30 rounded-full flex items-center py-1 px-1 bg-background/50 backdrop-blur-sm">
+                    <button
+                        onClick={() => handleSwitch("0")}
+                        className={cn(
+                            "relative z-10 w-fit h-10 rounded-full sm:px-6 px-3 sm:py-2 py-1 font-medium transition-colors",
+                            selected === "0" ? "text-white" : "text-muted-foreground"
+                        )}
+                    >
+                        {selected === "0" && (
+                            <motion.div
+                                layoutId="pricing-switch"
+                                className="absolute inset-0 rounded-full bg-primary"
+                                transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                            />
+                        )}
+                        <span className="relative z-10">Monthly</span>
+                    </button>
 
-                <button
-                    onClick={() => handleSwitch("1")}
-                    className={cn(
-                        "relative z-10 w-fit h-10 flex-shrink-0 rounded-full sm:px-6 px-3 sm:py-2 py-1 font-medium transition-colors",
-                        selected === "1" ? "text-white" : "text-muted-foreground"
-                    )}
-                >
-                    {selected === "1" && (
-                        <motion.div
-                            layoutId="pricing-switch"
-                            className="absolute inset-0 rounded-full bg-primary"
-                            transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                        />
-                    )}
-                    <span className="relative z-10">Yearly</span>
-                </button>
+                    <button
+                        onClick={() => handleSwitch("1")}
+                        className={cn(
+                            "relative z-10 w-fit h-10 shrink-0 rounded-full sm:px-6 px-3 sm:py-2 py-1 font-medium transition-colors",
+                            selected === "1" ? "text-white" : "text-muted-foreground"
+                        )}
+                    >
+                        {selected === "1" && (
+                            <motion.div
+                                layoutId="pricing-switch"
+                                className="absolute inset-0 rounded-full bg-primary"
+                                transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                            />
+                        )}
+                        <span className="relative z-10">Yearly</span>
+                    </button>
+                </div>
             </div>
-        </div>
+        </section>
     );
 };
 
@@ -158,7 +160,7 @@ export default function PricingSection() {
                     /> */}
                 </div>
                 <div className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 w-3/4 sm:w-1/2 aspect-[1/0.5] opacity-30">
-                    <div className="w-full h-full bg-gradient-to-b from-primary/50 to-transparent rounded-full blur-3xl" />
+                    <div className="w-full h-full bg-linear-to-b from-primary/50 to-transparent rounded-full blur-3xl" />
                 </div>
             </div>
 
@@ -262,7 +264,7 @@ export default function PricingSection() {
                                                 key={featureIndex}
                                                 className="flex items-center gap-2 text-sm text-muted-foreground"
                                             >
-                                                <Check className="h-4 w-4 text-primary flex-shrink-0" />
+                                                <Check className="h-4 w-4 text-primary shrink-0" />
                                                 {feature}
                                             </li>
                                         ))}
