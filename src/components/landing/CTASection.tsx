@@ -4,12 +4,11 @@ import ShaderBackground from "@/components/ui/shader-background";
 
 const CTASection = () => {
     return (
-        <section className="py-10 min-h-screen w-full xs:py-12 sm:py-20 md:py-0 relative">
-
-            <div className="relative rounded-lg xs:rounded-xl sm:rounded-2xl overflow-hidden p-5 xs:p-6 sm:p-10 md:p-12 lg:p-80 text-center">
+        <section className="relative w-full overflow-hidden">
+            <div className="relative py-16 xs:py-20 sm:py-28 md:py-36 lg:py-44 text-center">
                 <ShaderBackground />
 
-                <div className="relative z-10">
+                <div className="relative z-10 container mx-auto px-3 xs:px-4 sm:px-6">
                     <h2 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 xs:mb-3 sm:mb-4">
                         Ready to find your next client?
                     </h2>
@@ -22,7 +21,6 @@ const CTASection = () => {
                     </HoverButton>
                 </div>
             </div>
-
         </section>
     );
 };

@@ -139,37 +139,37 @@ export const PricingCard = ({
     return (
         <div
             className={`
-        relative flex-1 max-w-xs px-7 py-8 flex flex-col transition-all duration-300 rounded-3xl
+        relative w-full px-5 xs:px-6 sm:px-7 py-6 xs:py-7 sm:py-8 flex flex-col transition-all duration-300 rounded-2xl sm:rounded-3xl
         backdrop-blur-xl border
         ${isPopular
-                    ? 'scale-105 z-10 bg-[#1a0a14]/90 border-pink-500/50 hover:border-pink-500 shadow-[0_0_40px_rgba(236,72,153,0.15)]'
+                    ? 'md:scale-105 z-10 bg-[#1a0a14]/90 border-pink-500/50 hover:border-pink-500 shadow-[0_0_40px_rgba(236,72,153,0.15)]'
                     : 'bg-[#0e0e11]/80 border-white/10 hover:border-pink-500/70'
                 }
       `}
         >
             {isPopular && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-linear-to-r from-pink-400 to-pink-500 text-black text-xs font-bold px-4 py-1.5 rounded-full shadow-lg shadow-pink-500/30">
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-linear-to-r from-pink-400 to-pink-500 text-black text-[10px] xs:text-xs font-bold px-3 xs:px-4 py-1 xs:py-1.5 rounded-full shadow-lg shadow-pink-500/30 whitespace-nowrap">
                     Most Popular
                 </span>
             )}
-            <div className="mb-5">
-                <h3 className="text-2xl font-semibold text-pink-500 tracking-wide">{planName}</h3>
-                <p className="text-sm text-gray-400 mt-2 leading-relaxed">{description}</p>
+            <div className="mb-4 sm:mb-5">
+                <h3 className="text-xl xs:text-2xl font-semibold text-pink-500 tracking-wide">{planName}</h3>
+                <p className="text-xs xs:text-sm text-gray-400 mt-1.5 xs:mt-2 leading-relaxed">{description}</p>
             </div>
-            <div className="mb-6 flex items-baseline">
-                <span className="text-5xl font-light text-white">${price}</span>
-                <span className="text-gray-500 ml-1 text-sm">/mo</span>
+            <div className="mb-4 xs:mb-5 sm:mb-6 flex items-baseline">
+                <span className="text-3xl xs:text-4xl sm:text-5xl font-light text-white">${price}</span>
+                <span className="text-gray-500 ml-1 text-xs xs:text-sm">/mo</span>
             </div>
-            <ul className="space-y-3 mb-8 flex-1">
+            <ul className="space-y-2 xs:space-y-3 mb-6 xs:mb-7 sm:mb-8 flex-1">
                 {features.map((feature, index) => (
-                    <li key={index} className="flex items-center gap-3 text-sm text-gray-300">
-                        <CheckIcon className="w-4 h-4 text-pink-400 shrink-0" /> {feature}
+                    <li key={index} className="flex items-center gap-2 xs:gap-3 text-xs xs:text-sm text-gray-300">
+                        <CheckIcon className="w-3.5 h-3.5 xs:w-4 xs:h-4 text-pink-400 shrink-0" /> {feature}
                     </li>
                 ))}
             </ul>
             <RippleButton
                 className={`
-          w-full py-3 rounded-xl font-semibold text-sm transition-all duration-300
+          w-full py-2.5 xs:py-3 rounded-lg xs:rounded-xl font-semibold text-xs xs:text-sm transition-all duration-300
           ${buttonVariant === 'primary'
                         ? 'bg-linear-to-r from-pink-400 to-pink-500 hover:from-pink-300 hover:to-pink-400 text-black shadow-lg shadow-pink-500/25'
                         : 'bg-white/10 hover:bg-white/15 text-white border border-white/20 hover:border-white/30'
@@ -197,18 +197,18 @@ export const ModernPricingPage = ({
     showAnimatedBackground = true,
 }: ModernPricingPageProps) => {
     return (
-        <section className="relative min-h-screen w-full flex items-center justify-center py-16 sm:py-24 overflow-hidden bg-[#010203]">
+        <section className="relative min-h-screen w-full flex items-center justify-center py-12 xs:py-16 sm:py-20 md:py-24 overflow-hidden bg-[#010203]">
             {showAnimatedBackground && <ShaderCanvas />}
-            <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-12 sm:mb-16">
-                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-white mb-4">
+            <div className="relative z-10 w-full max-w-6xl mx-auto px-3 xs:px-4 sm:px-6 lg:px-8">
+                <div className="text-center mb-8 xs:mb-10 sm:mb-12 md:mb-16">
+                    <h2 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-light text-white mb-3 xs:mb-4 px-2">
                         {title}
                     </h2>
-                    <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+                    <p className="text-sm xs:text-base sm:text-lg text-gray-400 max-w-2xl mx-auto px-2">
                         {subtitle}
                     </p>
                 </div>
-                <div className="flex flex-col md:flex-row items-stretch justify-center gap-6 md:gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 xs:gap-5 sm:gap-6 md:gap-8 max-w-sm sm:max-w-none mx-auto">
                     {plans.map((plan) => <PricingCard key={plan.planName} {...plan} />)}
                 </div>
             </div>
