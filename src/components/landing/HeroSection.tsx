@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import LaserFlow from "@/components/LaserFlow";
+import { useSpring, useMotionValue } from "framer-motion";
 import dashboardPreview from "@/assets/dashboard-preview.png";
 import { Button } from "../ui/button";
 import { BorderBeam } from "../ui/border-beam";
@@ -8,6 +9,26 @@ const HeroSection = () => {
     const revealImgRef = useRef<HTMLImageElement>(null);
     const [isTablet, setIsTablet] = useState(false);
     const [isMobile, setIsMobile] = useState(false)
+
+    const [animatedOffset, setAnimatedOffset] = useState(1.5);
+
+    const [animatedHorizontalSizing, setAnimatedHorizontalSizing] = useState(0.05);
+    const [hasLanded, setHasLanded] = useState(false);
+
+    // Vertical drop animation
+    const targetOffset = isMobile ? -0.50 : isTablet ? -0.50 : 0.04;
+    const beamOffset = useMotionValue(1.5);
+    const springOffset = useSpring(beamOffset, {
+        stiffness: 50,
+        damping: 12
+    });
+
+    // Horizontal spread animation (starts narrow, spreads on impact)
+    const horizontalSizing = useMotionValue(0.05);
+    const springHorizontal = useSpring(horizontalSizing, {
+        stiffness: 80,
+        damping: 15
+    });
 
     useEffect(() => {
         const checkScreenSize = () => {
@@ -19,6 +40,35 @@ const HeroSection = () => {
         window.addEventListener('resize', checkScreenSize);
         return () => window.removeEventListener('resize', checkScreenSize);
     }, []);
+
+
+    // Trigger beam drop animation on mount
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            beamOffset.set(targetOffset);
+        }, 300);
+        return () => clearTimeout(timeout);
+    }, [targetOffset, beamOffset]);
+
+    // Subscribe to spring value changes and detect landing
+    useEffect(() => {
+        const unsubscribe = springOffset.on("change", (v) => {
+            setAnimatedOffset(v);
+            // Detect when beam is close to target (landed)
+            if (!hasLanded && Math.abs(v - targetOffset) < 0.15) {
+                setHasLanded(true);
+                // Trigger horizontal spread
+                horizontalSizing.set(0.5);
+            }
+        });
+        return () => unsubscribe();
+    }, [springOffset, targetOffset, hasLanded, horizontalSizing]);
+
+    // Subscribe to horizontal sizing changes
+    useEffect(() => {
+        const unsubscribe = springHorizontal.on("change", (v) => setAnimatedHorizontalSizing(v));
+        return () => unsubscribe();
+    }, [springHorizontal]);
 
     return (
         <section
@@ -41,9 +91,11 @@ const HeroSection = () => {
                 }
             }}
         >
+            {/* verticalBeamOffset={isMobile ? -0.50 : isTablet ? -0.50 : 0.04} */}
             <LaserFlow
                 horizontalBeamOffset={0.1}
-                verticalBeamOffset={isMobile ? -0.50 : isTablet ? -0.50 : 0.04}
+                verticalBeamOffset={animatedOffset}
+                horizontalSizing={animatedHorizontalSizing}
                 color="#EC4899"
             />
             {/* Hero Content */}
