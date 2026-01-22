@@ -101,13 +101,24 @@ const HeroSection = () => {
             {/* Hero Content */}
 
             <div className="absolute bottom-25 xs:top-24 sm:top-32 md:top-40 left-4 xs:left-6 sm:left-8 md:left-16 lg:left-70 z-10 max-w-70 xs:max-w-xs sm:max-w-sm md:max-w-md px-1 xs:px-2 sm:px-0">
-                <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-primary mb-3 sm:mb-4 animate-fade-in opacity-0" style={{ animationDelay: '0.1s', animationFillMode: 'forwards' }}>
+                <h1
+                    className={`text-4xl sm:text-5xl md:text-6xl font-bold text-primary mb-3 sm:mb-4 transition-all duration-500 ${hasLanded ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}
+                    style={{ transitionDelay: hasLanded ? '0.6s' : '0s' }}
+                >
                     LeadFlow
                 </h1>
-                <p className="text-base sm:text-lg md:text-xl text-foreground/90 mb-4 sm:mb-6 animate-fade-in opacity-0" style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}>
+                <p
+                    className={`text-base sm:text-lg md:text-xl text-foreground/90 mb-4 sm:mb-6 transition-all duration-500 ${hasLanded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+                    style={{ transitionDelay: hasLanded ? '0.7s' : '0s' }}
+                >
                     Generating leads has never been easier!
                 </p>
-                <Button variant="primary" size="default" className="text-sm sm:text-base animate-fade-in opacity-0" style={{ animationDelay: '0.5s', animationFillMode: 'forwards' }}>
+                <Button
+                    variant="primary"
+                    size="default"
+                    className={`text-sm sm:text-base transition-all duration-500 ${hasLanded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+                    style={{ transitionDelay: hasLanded ? '0.8s' : '0s' }}
+                >
                     Get Started
                 </Button>
             </div>
