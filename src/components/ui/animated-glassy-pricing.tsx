@@ -147,18 +147,18 @@ export const PricingCard = ({
         relative w-full px-5 xs:px-6 sm:px-7 py-6 xs:py-7 sm:py-8 flex flex-col transition-all duration-300 rounded-2xl sm:rounded-3xl
         backdrop-blur-xl border
         ${isPopular
-                    ? 'md:scale-105 z-10 bg-[#1a0a14]/90 border-pink-500/50 hover:border-pink-500 shadow-[0_0_40px_rgba(236,72,153,0.15)]'
-                    : 'bg-[#0e0e11]/80 border-white/10 hover:border-pink-500/70'
+                    ? 'md:scale-105 z-10 bg-[#1a0a14]/90 border-[#c61951]/50 hover:border-[#c61951] shadow-[0_0_40px_rgba(236,72,153,0.15)]'
+                    : 'bg-[#0e0e11]/80 border-white/10 hover:border-[#c61951]/70'
                 }
       `}
         >
             {isPopular && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-linear-to-r from-pink-400 to-pink-500 text-black text-[10px] xs:text-xs font-bold px-3 xs:px-4 py-1 xs:py-1.5 rounded-full shadow-lg shadow-pink-500/30 whitespace-nowrap">
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-linear-to-r from-[#c61951] to-[#c61951]/90 text-black text-[10px] xs:text-xs font-bold px-3 xs:px-4 py-1 xs:py-1.5 rounded-full shadow-lg shadow-[#c61951]/30 whitespace-nowrap">
                     Most Popular
                 </span>
             )}
             <div className="mb-4 sm:mb-5">
-                <h3 className="text-xl xs:text-2xl font-semibold text-pink-500 tracking-wide">{planName}</h3>
+                <h3 className="text-xl xs:text-2xl font-semibold text-[#c61951] tracking-wide">{planName}</h3>
                 <p className="text-xs xs:text-sm text-gray-400 mt-1.5 xs:mt-2 leading-relaxed">{description}</p>
             </div>
             <div className="mb-4 xs:mb-5 sm:mb-6 flex items-baseline">
@@ -168,7 +168,7 @@ export const PricingCard = ({
             <ul className="space-y-2 xs:space-y-3 mb-6 xs:mb-7 sm:mb-8 flex-1">
                 {features.map((feature, index) => (
                     <li key={index} className="flex items-center gap-2 xs:gap-3 text-xs xs:text-sm text-gray-300">
-                        <CheckIcon className="w-3.5 h-3.5 xs:w-4 xs:h-4 text-pink-400 shrink-0" /> {feature}
+                        <CheckIcon className="w-3.5 h-3.5 xs:w-4 xs:h-4 text-[#c61951] shrink-0" /> {feature}
                     </li>
                 ))}
             </ul>
@@ -176,7 +176,7 @@ export const PricingCard = ({
                 className={`
           w-full py-2.5 xs:py-3 rounded-lg xs:rounded-xl font-semibold text-xs xs:text-sm transition-all duration-300
           ${buttonVariant === 'primary'
-                        ? 'bg-linear-to-r from-pink-400 to-pink-500 hover:from-pink-300 hover:to-pink-400 text-black shadow-lg shadow-pink-500/25'
+                        ? 'bg-linear-to-r from-[#c61951] to-[#c61951]/90 hover:from-pink-300 hover:to-[#c61951] text-black shadow-lg shadow-[#c61951]/25'
                         : 'bg-white/10 hover:bg-white/15 text-white border border-white/20 hover:border-white/30'
                     }
         `}
