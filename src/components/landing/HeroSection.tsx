@@ -96,7 +96,7 @@ const HeroSection = () => {
                 horizontalBeamOffset={0.1}
                 verticalBeamOffset={animatedOffset}
                 horizontalSizing={animatedHorizontalSizing}
-                color="#EC4899"
+                color="#c61951"
             />
             {/* Hero Content */}
 

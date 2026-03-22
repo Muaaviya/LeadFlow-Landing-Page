@@ -60,7 +60,12 @@ const ShaderCanvas = () => {
         vec2 v=rotate2d(iTime)*uv;
 
         // Pink/ruby color theme (#EC4899 = RGB 236, 72, 153)
-        vec3 foregroundColor=vec3(0.925 + v.x*0.075, 0.28 + v.y*0.15, 0.6 - v.y*v.x*0.1);
+        // vec3 foregroundColor=vec3(0.925 + v.x*0.075, 0.28 + v.y*0.15, 0.6 - v.y*v.x*0.1);
+        vec3 foregroundColor = vec3(
+    0.776 + v.x * 0.05,
+    0.094 + v.y * 0.05,
+    0.318 - v.x * v.y * 0.05
+);
         vec3 color=mix(uBackgroundColor,foregroundColor,mask);
         color=mix(color,vec3(1.),paintCircle(uv,center,radius,.003).r);
         gl_FragColor=vec4(color,1.);

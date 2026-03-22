@@ -11,29 +11,29 @@
   --card-foreground: hsl(0 0% 95%);
   --popover: hsl(240 10% 6%);
   --popover-foreground: hsl(0 0% 95%);
-  --primary: hsl(330 85% 60%);
+  --primary: hsl(340 78% 44%);
   --primary-foreground: hsl(0 0% 100%);
   --secondary: hsl(240 10% 10%);
   --secondary-foreground: hsl(0 0% 85%);
   --muted: hsl(240 10% 12%);
   --muted-foreground: hsl(240 5% 55%);
-  --accent: hsl(330 85% 60%);
+  --accent: hsl(340 78% 44%);
   --accent-foreground: hsl(0 0% 100%);
   --destructive: hsl(0 84.2% 60.2%);
   --destructive-foreground: hsl(210 40% 98%);
   --border: hsl(240 10% 15%);
   --input: hsl(240 10% 15%);
-  --ring: hsl(330 85% 60%);
-  --glow: hsl(330 85% 60%);
+  --ring: hsl(340 78% 44%);
+  --glow: hsl(340 78% 44%);
   --glow-subtle: hsl(330 70% 45%);
   --sidebar-background: hsl(240 10% 5%);
   --sidebar-foreground: hsl(240 4.8% 95.9%);
-  --sidebar-primary: hsl(330 85% 60%);
+  --sidebar-primary: hsl(340 78% 44%);
   --sidebar-primary-foreground: hsl(0 0% 100%);
   --sidebar-accent: hsl(240 10% 12%);
   --sidebar-accent-foreground: hsl(240 4.8% 95.9%);
   --sidebar-border: hsl(240 10% 15%);
-  --sidebar-ring: hsl(330 85% 60%);
+  --sidebar-ring: hsl(340 78% 44%);
 }
 
 @theme inline {
@@ -185,11 +185,11 @@
 }
 
 @utility glow {
-  box-shadow: 0 0 60px hsl(330 85% 60% / 0.15);
+  box-shadow: 0 0 60px hsl(340 78% 44% / 0.15);
 }
 
 @utility glow-sm {
-  box-shadow: 0 0 30px hsl(330 85% 60% / 0.1);
+  box-shadow: 0 0 30px hsl(340 78% 44% / 0.1);
 }
 
 @utility glass {
