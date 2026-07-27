@@ -3,73 +3,81 @@ import { CardSpotlight } from "@/components/ui/card-spotlight";
 import { motion } from "framer-motion";
 
 const features = [
-    {
-        icon: Target,
-        title: "Precision Targeting",
-        description: "Define your ideal client profile and get leads that match your specific criteria."
-    },
-    {
-        icon: Zap,
-        title: "AI-Powered Discovery",
-        description: "Our algorithms scan thousands of sources to find businesses that need your services."
-    },
-    {
-        icon: Users,
-        title: "Qualified Contacts",
-        description: "Get verified contact information including emails and decision-maker details."
-    },
-    {
-        icon: BarChart3,
-        title: "Lead Scoring",
-        description: "Prioritize your outreach with intelligent lead scoring based on conversion potential."
-    }
+  {
+    icon: Target,
+    title: "Precision Targeting",
+    description:
+      "Define your ideal client profile and get leads that match your specific criteria.",
+  },
+  {
+    icon: Zap,
+    title: "AI-Powered Discovery",
+    description:
+      "Our algorithms scan thousands of sources to find businesses that need your services.",
+  },
+  {
+    icon: Users,
+    title: "Qualified Contacts",
+    description:
+      "Get verified contact information including emails and decision-maker details.",
+  },
+  {
+    icon: BarChart3,
+    title: "Lead Scoring",
+    description:
+      "Prioritize your outreach with intelligent lead scoring based on conversion potential.",
+  },
 ];
 
 const FeaturesSection = () => {
-    return (
-        <section id="features" className="py-12 xs:py-16 sm:py-20 md:py-24 relative">
-            <div className="container mx-auto px-3 xs:px-4 sm:px-6">
-                <div className="text-center mb-8 xs:mb-10 sm:mb-12 md:mb-16">
-                    <h2 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-2 xs:mb-3 sm:mb-4">
-                        Everything you need to grow
-                    </h2>
-                    <p className="text-xs xs:text-sm sm:text-base text-muted-foreground max-w-sm xs:max-w-md sm:max-w-lg mx-auto px-2 xs:px-4 sm:px-0">
-                        LeadFlow combines intelligent prospecting with actionable data to accelerate your client acquisition.
-                    </p>
-                </div>
+  return (
+    <section
+      id="features"
+      className="py-12 xs:py-16 sm:py-20 md:py-24 relative"
+    >
+      <div className="container mx-auto px-3 xs:px-4 sm:px-6">
+        <div className="text-center mb-8 xs:mb-10 sm:mb-12 md:mb-16">
+          <h2 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-2 xs:mb-3 sm:mb-4">
+            Everything you need to grow
+          </h2>
+          <p className="text-xs xs:text-sm sm:text-base text-muted-foreground max-w-sm xs:max-w-md sm:max-w-lg mx-auto px-2 xs:px-4 sm:px-0">
+            LeadFlow combines intelligent prospecting with actionable data to
+            accelerate your client acquisition.
+          </p>
+        </div>
 
-                <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-3 xs:gap-4 sm:gap-5 md:gap-6">
-                    {features.map((feature, index) => (
-                        <motion.div
-                            key={feature.title}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: "-50px" }}
-                            transition={{
-                                duration: 0.5,
-                                delay: index * 0.1,
-                                ease: [0.25, 0.46, 0.45, 0.94]
-                            }}
-                        >
-                            <CardSpotlight className="p-4 xs:p-5 sm:p-6 rounded-lg xs:rounded-xl bg-card border-border h-full">
-                                <div className="relative z-20">
-                                    <div className="w-10 h-10 xs:w-12 xs:h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-3 xs:mb-4 group-hover/spotlight:bg-primary/20 group-hover/spotlight:shadow-[0_0_20px_rgba(236,72,153,0.4)] transition-all duration-300">
-                                        <feature.icon className="w-5 h-5 xs:w-6 xs:h-6 text-primary group-hover/spotlight:drop-shadow-[0_0_8px_rgba(236,72,153,0.6)] transition-all duration-300" />
-                                    </div>
-                                    <h3 className="text-base xs:text-lg font-semibold text-foreground mb-1.5 xs:mb-2">
-                                        {feature.title}
-                                    </h3>
-                                    <p className="text-xs xs:text-sm text-muted-foreground leading-relaxed">
-                                        {feature.description}
-                                    </p>
-                                </div>
-                            </CardSpotlight>
-                        </motion.div>
-                    ))}
+        <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-3 xs:gap-4 sm:gap-5 md:gap-6">
+          {features.map((feature, index) => (
+            <motion.div
+              key={feature.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.1,
+                ease: [0.25, 0.46, 0.45, 0.94],
+              }}
+            >
+              <CardSpotlight className="p-4 xs:p-5 sm:p-6 rounded-lg xs:rounded-xl bg-card border-border h-full">
+                <div className="relative z-20">
+                  <div className="w-10 h-10 xs:w-12 xs:h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-3 xs:mb-4 group-hover/spotlight:bg-primary/20 group-hover/spotlight:shadow-[0_0_20px_rgba(236,72,153,0.4)] transition-all duration-300">
+                    <feature.icon className="w-5 h-5 xs:w-6 xs:h-6 text-primary group-hover/spotlight:drop-shadow-[0_0_8px_rgba(236,72,153,0.6)] transition-all duration-300" />
+                  </div>
+                  <h3 className="text-base xs:text-lg font-semibold text-foreground mb-1.5 xs:mb-2">
+                    {feature.title}
+                  </h3>
+                  <p className="text-xs xs:text-sm text-muted-foreground leading-relaxed">
+                    {feature.description}
+                  </p>
                 </div>
-            </div>
-        </section>
-    );
+              </CardSpotlight>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default FeaturesSection;
