@@ -13,30 +13,30 @@ export const BrandScroller = () => {
               key={i}
               className="flex shrink-0 animate-[scroll_20s_linear_infinite] items-center gap-20"
             >
-              <div className="flex items-center gap-4 pl-20">
-                <BsSpotify className="h-20 w-12 text-muted-foreground" />
-                <span className="text-6xl font-semibold text-muted-foreground">
+              <div className="group flex items-center gap-4 pl-20 ">
+                <BsSpotify className="h-20 w-12 text-muted-foreground group-hover:text-white" />
+                <span className="text-6xl font-semibold text-muted-foreground group-hover:text-white">
                   Spotify
                 </span>
               </div>
 
-              <div className="flex items-center gap-4">
-                <BsYoutube className="h-20 w-12 text-muted-foreground" />
-                <span className="text-6xl font-semibold text-muted-foreground">
+              <div className="group flex items-center gap-4">
+                <BsYoutube className="h-20 w-12 text-muted-foreground group-hover:text-white" />
+                <span className="text-6xl font-semibold text-muted-foreground group-hover:text-white">
                   YouTube
                 </span>
               </div>
 
-              <div className="flex items-center gap-4">
-                <BsAmazon className="h-20 w-12 text-muted-foreground" />
-                <span className="text-6xl font-semibold text-muted-foreground">
+              <div className="group flex items-center gap-4">
+                <BsAmazon className="h-20 w-12 text-muted-foreground group-hover:text-white" />
+                <span className="text-6xl font-semibold text-muted-foreground group-hover:text-white">
                   Amazon
                 </span>
               </div>
 
-              <div className="flex items-center gap-4">
-                <BsGoogle className="h-20 w-12 text-muted-foreground" />
-                <span className="text-6xl font-semibold text-muted-foreground">
+              <div className="group flex items-center gap-4">
+                <BsGoogle className="h-20 w-12 text-muted-foreground group-hover:text-white" />
+                <span className="text-6xl font-semibold text-muted-foreground group-hover:text-white">
                   Google
                 </span>
               </div>
@@ -58,30 +58,30 @@ export const BrandScrollerReverse = () => {
               key={i}
               className="flex shrink-0 animate-[scroll_20s_linear_infinite_reverse] items-center gap-20"
             >
-              <div className="flex items-center gap-4 pl-20">
-                <BsSpotify className="h-20 w-12 text-muted-foreground" />
-                <span className="text-6xl font-semibold text-muted-foreground">
+              <div className="group flex items-center gap-4 pl-20">
+                <BsSpotify className="h-20 w-12 text-muted-foreground group-hover:text-white" />
+                <span className="text-6xl font-semibold text-muted-foreground group-hover:text-white">
                   Spotify
                 </span>
               </div>
 
-              <div className="flex items-center gap-4">
-                <BsYoutube className="h-20 w-12 text-muted-foreground" />
-                <span className="text-6xl font-semibold text-muted-foreground">
+              <div className="group flex items-center gap-4">
+                <BsYoutube className="h-20 w-12 text-muted-foreground group-hover:text-white" />
+                <span className="text-6xl font-semibold text-muted-foreground group-hover:text-white">
                   YouTube
                 </span>
               </div>
 
-              <div className="flex items-center gap-4">
-                <BsAmazon className="h-20 w-12 text-muted-foreground" />
-                <span className="text-6xl font-semibold text-muted-foreground">
+              <div className="group flex items-center gap-4">
+                <BsAmazon className="h-20 w-12 text-muted-foreground group-hover:text-white" />
+                <span className="text-6xl font-semibold text-muted-foreground group-hover:text-white">
                   Amazon
                 </span>
               </div>
 
-              <div className="flex items-center gap-4">
-                <BsGoogle className="h-20 w-12 text-muted-foreground" />
-                <span className="text-6xl font-semibold text-muted-foreground">
+              <div className="group flex items-center gap-4">
+                <BsGoogle className="h-20 w-12 text-muted-foreground group-hover:text-white" />
+                <span className="text-6xl font-semibold text-muted-foreground group-hover:text-white">
                   Google
                 </span>
               </div>
