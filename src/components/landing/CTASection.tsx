@@ -17,7 +17,14 @@ const CTASection = () => {
             grow their business.
           </p>
           <HoverButton className="group text-xs xs:text-sm sm:text-base px-4 xs:px-5 sm:px-6">
-            Get started for free
+            <a
+              href="https://app-leadflow.vercel.app/dashboard"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {" "}
+              Get started for free
+            </a>
             <ArrowRight className="w-3 h-3 xs:w-3.5 xs:h-3.5 sm:w-4 sm:h-4 ml-1.5 xs:ml-2 group-hover:translate-x-1 transition-transform inline-block" />
           </HoverButton>
         </div>

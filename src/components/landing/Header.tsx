@@ -50,9 +50,15 @@ const Header = () => {
           <Button
             variant="primary"
             size="sm"
-            className="text-xs sm:text-sm px-3 sm:px-4"
+            className="text-xs sm:text-sm px-3 sm:px-4 transition-all delay-200"
           >
-            Get Started
+            <a
+              href="https://app-leadflow.vercel.app/dashboard"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Get Started
+            </a>
           </Button>
 
           {/* Mobile burger menu */}
@@ -92,8 +98,17 @@ const Header = () => {
                 >
                   Sign in
                 </a>
-                <Button variant="primary" className="mt-2 w-full">
-                  Get Started
+                <Button
+                  variant="primary"
+                  className="mt-2 w-full transition-all delay-200"
+                >
+                  <a
+                    href="https://app-leadflow.vercel.app/dashboard"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Get Started
+                  </a>
                 </Button>
               </nav>
             </SheetContent>
