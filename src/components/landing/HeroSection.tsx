@@ -118,10 +118,16 @@ const HeroSection = () => {
         <Button
           variant="primary"
           size="default"
-          className={`text-sm sm:text-base transition-all duration-500 ${hasLanded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+          className={`text-sm sm:text-base transition-all  cursor-pointer duration-500 ${hasLanded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
           style={{ transitionDelay: hasLanded ? "0.8s" : "0s" }}
         >
-          Get Started
+          <a
+            href="https://app-leadflow.vercel.app/dashboard"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Get Started
+          </a>
         </Button>
       </div>
 
@@ -154,7 +160,7 @@ const HeroSection = () => {
           {
             zIndex: 5,
             mixBlendMode: "lighten",
-            // @ts-ignore
+            //@ts-ignore
             "--mx": "-9999px",
             "--my": "-9999px",
             WebkitMaskImage:
@@ -167,7 +173,7 @@ const HeroSection = () => {
         }
       />
 
-      <div className="absolute bottom-0 left-0 right-0 h-28 sm:h-20 bg-gradient-to-t from-[#0c0c0c] via-[#0c0c0c]/20 to-transparent backdrop-blur-[4px] pointer-events-none z-35" />
+      <div className="absolute bottom-0 left-0 right-0 h-28 sm:h-20 bg-gradient-to-t from-[#0c0c0c] via-[#0c0c0c]/20 to-transparent pointer-events-none z-35" />
     </section>
   );
 };
